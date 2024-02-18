@@ -20,7 +20,7 @@ scrollRevealFromRight.reveal(
   `#home-img, 
   #about-text-div, 
   #achievements-numbers, 
-  #contact-socials`
+  #contact-infos`
   , {interval: 100})
 
 const scrollRevealFromLeft = ScrollReveal({
