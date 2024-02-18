@@ -80,6 +80,7 @@ const swiperServices = new Swiper('#services .swiper-container', {
   breakpoints: {
     1250:{
     slidesPerView: 3,
+    mousewheel: false,
     },
     900:{
       slidesPerView: 2,
@@ -108,3 +109,64 @@ function scrollToSection(event) {
 menuLinks.forEach(function (link) {
     link.addEventListener('click', scrollToSection);
 })
+
+// HEADER - Actual Section
+const underline = document.getElementById("actual_section_underline")
+const items = document.querySelectorAll(".item")
+
+function moveUnderline(item) {
+  window.removeEventListener('scroll', activateMenu)
+  underline.style.left = item.offsetLeft + "px";
+  underline.style.width = item.clientWidth + "px";
+  setTimeout(function () {
+    window.addEventListener('scroll', activateMenu);
+  }, 700);
+}
+
+const sections = document.querySelectorAll('main section')
+function activateMenuAtCurrentSection() {
+    const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 3
+    for(const section of sections) {
+        const sectionTop = section.offsetTop
+        const sectionHeight = section.offsetHeight
+        const sectionId = section.getAttribute('id')
+
+        const checkpointStart = checkpoint >= sectionTop
+        const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+        if(checkpointStart && checkpointEnd) {
+            document.querySelector(`li[id="item-${sectionId}"]`).classList.add('active')
+
+            item_atual = document.querySelector(`li[id="item-${sectionId}"]`)
+            underline.style.left = item_atual.offsetLeft + "px";
+            underline.style.width = item_atual.clientWidth + "px";
+        } else {
+            document.querySelector(`li[id="item-${sectionId}"]`).classList.remove('active')
+        }
+    }
+}
+
+function activateMenu() {
+  activateMenuAtCurrentSection()
+}
+
+window.addEventListener('scroll', activateMenu)
+
+var item_atual = document.getElementById("item-home");
+item_atual.classList.add('active')
+window.scrollTo(0, 0);
+moveUnderline(item_atual)
+
+for (const item of items) {
+    item.addEventListener('click', function() {
+        moveUnderline(this)
+        item_atual.classList.remove('active')
+        item_atual = this;
+        item_atual.classList.add('active')
+    });
+}
+
+window.addEventListener('resize', function() {
+    moveUnderline(item_atual)
+    }
+)

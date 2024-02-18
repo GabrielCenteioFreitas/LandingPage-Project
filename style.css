@@ -17,6 +17,7 @@
     --background-header-footer-color: #cfefd1;
     --logo-color: #263238;
     --menu-color: #18191F;
+    --menu-hover-color: #000000;
     --title-color: #4D4D4D;
     --title-color-rgb: 77, 77, 77;
     --text-color: #717171;
@@ -140,6 +141,25 @@ a {
 #menu-list li a{
     color: var(--menu-color);
     text-decoration: none;
+    
+    transition: font-weight .2s, color .2s;
+}
+#menu-list li.active a, #menu-list li a:hover{
+    color: var(--menu-hover-color);
+    font-weight: 600;
+}
+#actual_section_underline {
+    width: 0;
+    height: 1.5px;
+    margin-top: 1rem;
+
+    position: fixed;
+    top: 45px;
+    left: 0;
+
+    background-color: var(--menu-color);
+
+    transition: width .6s, left .6s;
 }
 #login-button {
     width: 10rem;
