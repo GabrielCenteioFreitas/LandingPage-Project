@@ -53,10 +53,10 @@ window.addEventListener('scroll', function () {
 })
 
 // ARTICLES
-const swiper = new Swiper('.swiper-container', {
+const swiperArticles = new Swiper('#articles .swiper-container', {
     slidesPerView: 1,
     pagination: {
-      el: '.swiper-pagination'
+      el: '#articles .swiper-pagination'
     },
     breakpoints: {
       1400:{
@@ -69,6 +69,25 @@ const swiper = new Swiper('.swiper-container', {
     mousewheel: true,
     keyboard: true,
   })
+
+
+// SERVICES
+const swiperServices = new Swiper('#services .swiper-container', {
+  slidesPerView: 1,
+  pagination: {
+    el: '#services .swiper-pagination'
+  },
+  breakpoints: {
+    1250:{
+    slidesPerView: 3,
+    },
+    900:{
+      slidesPerView: 2,
+    }
+  },
+  mousewheel: true,
+  keyboard: true,
+})
 
 // SCROLL TO SECTION
 var menuLinks = document.querySelectorAll('#menu-list a');

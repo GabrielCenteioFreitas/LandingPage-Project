@@ -234,20 +234,19 @@ a {
     margin: 0 auto .8rem;
 }
 #services-subtitle {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 #services-cards {
     text-align: center;
-    margin-top: 1.6rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+}
+#services .swiper {
+    width: 100%;
+    height: 39rem;
 }
 .services-card-text {
     text-align: justify;
 }
-.card {
+.card-div {
     width: 30rem;
     padding: 2.4rem 3.2rem;
     border-radius: 2rem;
@@ -257,9 +256,18 @@ a {
     transition: transform .2s;
 
     flex-shrink: 0;
+
+    margin: 3rem auto 0;
 }
-.card:hover {
+.card-div:hover {
     transform: translateY(-15px);
+}
+#services .swiper-container .swiper-pagination-bullet {
+    width: 1rem;
+    height: 1rem;
+}
+#services .swiper-pagination-bullet-active {
+    background-color: var(--primary-color) !important;
 }
 .card-img-background {
     margin: 0 auto;
@@ -342,17 +350,17 @@ a {
 #articles-subtitle {
     margin: 2rem auto 5rem;
 }
-.swiper-pagination {
+#articles .swiper-pagination {
     margin-bottom: -40px;
 }
-.swiper-container .swiper-pagination-bullet {
+#articles .swiper-container .swiper-pagination-bullet {
     width: 1rem;
     height: 1rem;
 }
-.swiper-pagination-bullet-active {
+#articles .swiper-pagination-bullet-active {
     background-color: var(--primary-color) !important;
 }
-.swiper {
+#articles .swiper {
     height: 66.6rem;
 }
 .article-div {
