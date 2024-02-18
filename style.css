@@ -109,10 +109,14 @@ a {
     align-items: center;
     justify-content: space-between;
 }
-
 #logo {
     width: 15.5rem;
     height: 2.4rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
 }
 #logo-img {
     width: 3.5rem;
