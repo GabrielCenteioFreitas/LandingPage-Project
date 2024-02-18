@@ -28,6 +28,9 @@ body {
 html {
     scroll-behavior: smooth;
 }
+a {
+    text-decoration: none;
+}
 
 /* ------------- UNIVERSAIS ------------- */
 .section-title {
@@ -64,6 +67,9 @@ html {
     background-color: var(--primary-color);
     color: var(--background-color);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     transition: transform .2s, background-color .2s;
 }
@@ -107,12 +113,6 @@ html {
 #logo {
     width: 15.5rem;
     height: 2.4rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    text-decoration: none;
 }
 #logo-img {
     width: 3.5rem;
@@ -160,6 +160,10 @@ html {
     height: 100%;
 
     padding: 1rem 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ------------- MAIN ------------- */
@@ -220,6 +224,8 @@ html {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: 500;
+    text-align: justify;
+    text-indent: 2rem;
 }
 #about-name {
     color: var(--primary-color);
@@ -243,11 +249,15 @@ html {
     margin-bottom: 4rem;
 }
 #services-cards {
+    text-align: center;
     margin-top: 1.6rem;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.services-card-text {
+    text-align: justify;
 }
 .card {
     width: 30rem;
