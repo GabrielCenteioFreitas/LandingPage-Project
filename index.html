@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexcent</title>
+    <link rel="website icon" type="png" href="assets/Logo.png">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-queries.css">
 
     <link rel="stylesheet" href="./fontawesome/fontawesome.v6.5.1.all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,19 +20,25 @@
 <body>
     <header id="header">
         <div id="header-div">
-            <a class="logo" href="#">
+            <a class="logo" href="#home">
                 <img class="logo-img" src="assets/Logo.png" alt="Logo da Nexcent">
                 <h1 class="logo-name">Nexcent</h1>
             </a>
-            <div id="menu">
-                <ul id="menu-list">
-                    <li class="item" id="item-home"><a href="#home">Home</a></li>
-                    <li class="item" id="item-about"><a href="#about">Sobre</a></li>
-                    <li class="item" id="item-services"><a href="#services">Serviços</a></li>
-                    <li class="item" id="item-achievements"><a href="#achievements">Conquistas</a></li>
-                    <li class="item" id="item-articles"><a href="#articles">Artigos</a></li>
-                    <li class="item" id="item-contact"><a href="#contact">Contato</a></li>
-                </ul>
+            <div id="menu" class="">
+                <div id="menu-list-div">
+                    <ul id="menu-list">
+                        <li class="item" id="item-home"><a href="#home">Home</a></li>
+                        <li class="item" id="item-about"><a href="#about">Sobre</a></li>
+                        <li class="item" id="item-services"><a href="#services">Serviços</a></li>
+                        <li class="item" id="item-achievements"><a href="#achievements">Conquistas</a></li>
+                        <li class="item" id="item-articles"><a href="#articles">Artigos</a></li>
+                        <li class="item" id="item-contact"><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div id="header-icons-div">
+                    <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+                    <i class="fa-solid fa-xmark" onclick="showMenu()"></i>
+                </div>
             </div>
             <div id="actual_section_underline"></div>
             <div id="login-div">
@@ -130,15 +138,19 @@
                         <div class="achievements-achievement">
                             <i class="fa-solid fa-handshake achievements-icons"></i>
                             <div class="achiements-achievement-numbers">
-                                <h4 class="section-title">2,245,341</h4>
-                                <p class="section-text">Membros</p>
+                                <h4 class="section-title">2,245,341&nbsp</h4>
+                                <span class="section-text">Membros</span>
+                                
+                                
                             </div>
                         </div>
                         <div class="achievements-achievement">
                             <i class="fa-solid fa-user-group achievements-icons"></i>
                             <div class="achiements-achievement-numbers">
-                                <h4 class="section-title">46,328</h4>
-                                <p class="section-text">Clubes</p>
+                                <h4 class="section-title">46,328&nbsp</h4>
+                                <span class="section-text">Clubes</span>
+                                
+                                
                             </div>
                         </div>
                     </div>
@@ -146,15 +158,19 @@
                         <div class="achievements-achievement">
                             <i class="fa-solid fa-book achievements-icons"></i>
                             <div class="achiements-achievement-numbers">
-                                <h4 class="section-title">828,867</h4>
-                                <p class="section-text">Artigos</p>
+                                <h4 class="section-title">828,867&nbsp</h4>
+                                <span class="section-text">Artigos</span>
+                                
+                                
                             </div>
                         </div>
                         <div class="achievements-achievement">
                             <i class="fa-solid fa-medal achievements-icons"></i>
                             <div class="achiements-achievement-numbers">
-                                <h4 class="section-title">1,926,436</h4>
-                                <p class="section-text">Conquistas</p>
+                                <h4 class="section-title">1,926,436&nbsp</h4>
+                                <span class="section-text">Conquistas</span>
+                                
+                                
                             </div>
                         </div>
                     </div>

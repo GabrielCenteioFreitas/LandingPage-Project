@@ -10,42 +10,62 @@ function changeHeaderWhenScroll() {
 }
 
 // SCROLL REVEAL
-const scrollRevealFromRight = ScrollReveal({
-  origin: 'right',
-  distance: '50px',
-  duration: 900,
-  reset: true
-});
-scrollRevealFromRight.reveal(
-  `#home-img, 
-  #about-text-div, 
-  #achievements-numbers, 
-  #contact-infos`
-  , {interval: 100})
+function adjustScrollReveal() { 
+  if(window.matchMedia('(min-width: 801px)').matches) {
+    const scrollRevealFromRight = ScrollReveal({
+      origin: 'right',
+      distance: '50px',
+      duration: 900,
+      reset: true
+    });
+    scrollRevealFromRight.reveal(
+      `#home-img, 
+      #about-text-div, 
+      #achievements-numbers, 
+      #contact-infos`
+      , {interval: 100})
 
-const scrollRevealFromLeft = ScrollReveal({
-  origin: 'left',
-  distance: '50px',
-  duration: 900,
-  reset: true
-});
-scrollRevealFromLeft.reveal(
-  `#home-text, 
-  #about-img,
-  #achievements-text, 
-  #contact-main`
-  , {interval: 100})
+    const scrollRevealFromLeft = ScrollReveal({
+      origin: 'left',
+      distance: '50px',
+      duration: 900,
+      reset: true
+    });
+    scrollRevealFromLeft.reveal(
+      `#home-text, 
+      #about-img,
+      #achievements-text, 
+      #contact-main`
+      , {interval: 100})
 
-const scrollRevealFromTop = ScrollReveal({
-  origin: 'top',
-  distance: '50px',
-  duration: 900,
-  reset: true
-});
-scrollRevealFromTop.reveal(
-  `#services-title, #services-subtitle, #services-cards, 
-  #articles-title, #articles-subtitle, #articles .swiper-container`
-  , {interval: 100})
+    const scrollRevealFromTop = ScrollReveal({
+      origin: 'top',
+      distance: '50px',
+      duration: 900,
+      reset: true
+    });
+    scrollRevealFromTop.reveal(
+      `#services-title, #services-subtitle, #services-cards, 
+      #articles-title, #articles-subtitle, #articles .swiper-container`
+      , {interval: 100})
+  } else {
+    const scrollRevealFromTop = ScrollReveal({
+      origin: 'top',
+      distance: '30px',
+      duration: 700,
+      reset: true
+    });
+    scrollRevealFromTop.reveal(
+      `#home-img, #home-text, 
+      #about-img, #about-text-div,
+      #services-title, #services-subtitle, #services-cards, 
+      #achievements-text, #achievements-numbers, 
+      #articles-title, #articles-subtitle, #articles .swiper-container, 
+      #contact-main, #contact-infos`
+      , {interval: 100})
+  }
+}
+adjustScrollReveal();
 
 // DETECT SCROLL
 window.addEventListener('scroll', function () {
@@ -62,7 +82,7 @@ const swiperArticles = new Swiper('#articles .swiper-container', {
       1400:{
       slidesPerView: 3,
       },
-      1050:{
+      900:{
         slidesPerView: 2,
       }
     },
@@ -78,17 +98,26 @@ const swiperServices = new Swiper('#services .swiper-container', {
     el: '#services .swiper-pagination'
   },
   breakpoints: {
-    1250:{
-    slidesPerView: 3,
-    mousewheel: false,
+    1250: {
+      slidesPerView: 3,
     },
-    900:{
+    900: {
       slidesPerView: 2,
     }
   },
   mousewheel: true,
   keyboard: true,
-})
+});
+
+function adjustSwiperSettings() {
+  const windowWidth = window.innerWidth;
+  if (windowWidth >= 1250) {
+    swiperServices.mousewheel.disable();
+  } else {
+    swiperServices.mousewheel.enable();
+  }
+}
+adjustSwiperSettings()
 
 // SCROLL TO SECTION
 var menuLinks = document.querySelectorAll('#menu-list a');
@@ -112,7 +141,7 @@ menuLinks.forEach(function (link) {
 
 // HEADER - Actual Section
 const underline = document.getElementById("actual_section_underline")
-const items = document.querySelectorAll(".item")
+const items = document.querySelectorAll("#menu .item")
 
 function moveUnderline(item) {
   window.removeEventListener('scroll', activateMenu)
@@ -167,6 +196,74 @@ for (const item of items) {
 }
 
 window.addEventListener('resize', function() {
-    moveUnderline(item_atual)
+    moveUnderline(item_atual);
+    adjustSwiperSettings();
     }
 )
+
+// Ajeitando responsividade para diversas telas
+// var articles_swiper = document.querySelector('#articles .swiper')
+// var articles_subtitle_height = document.querySelector('#articles-subtitle').offsetHeight
+// articles_swiper.style.height = ((articles_subtitle_height + 500)/10) + 'rem'
+// const breakpoints = [1346, 979, 940, 817];
+// let heightValue = 0
+// for (let i = 0; i < breakpoints.length; i++) {
+//   if (window.innerWidth <= breakpoints[i]) {
+//     heightValue = (articles_subtitle_height + [510, 545, 560, 550][i]) / 10;
+//     articles_swiper.style.height = heightValue + 'rem';
+//   }
+// }
+// const articles_swiper_wrapper_height = document.querySelector('#articles .swiper-wrapper').offsetTop
+// console.log(articles_swiper_wrapper_height)
+
+
+// Menu para mobile
+const menu = document.getElementById('menu')
+function showMenu() {
+  menu.classList.toggle('show')
+  if(menu.classList.contains('show')){
+    window.removeEventListener('scroll', activateMenu)
+  } else {
+    window.addEventListener('scroll', activateMenu)
+  }
+}
+for (const item of items) {
+    item.addEventListener('click', function () {
+        menu.classList.remove('show')
+  })
+}
+        
+var item_atual = document.getElementById("item-home");
+item_atual.classList.add('active')
+window.scrollTo(0, 0);
+moveUnderline(item_atual)
+
+for (const item of items) {
+    item.addEventListener('click', function() {
+        moveUnderline(this)
+        item_atual.classList.remove('active')
+        item_atual = this;
+        item_atual.classList.add('active')
+    });
+}
+
+window.addEventListener('resize', function() {
+    moveUnderline(item_atual);
+    adjustSwiperSettings();
+    }
+)
+
+// Menu para mobile
+function showMenu() {
+  menu.classList.toggle('show')
+  if(menu.classList.contains('show')){
+    window.removeEventListener('scroll', activateMenu)
+  } else {
+    window.addEventListener('scroll', activateMenu)
+  }
+}
+for (const item of items) {
+    item.addEventListener('click', function () {
+        menu.classList.remove('show');
+    })
+}

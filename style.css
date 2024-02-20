@@ -128,7 +128,6 @@ a {
     font-size: 2.8rem;
     color: var(--logo-color);
 }
-
 #menu-list {
     list-style: none;
     font-size: 1.6rem;
@@ -150,7 +149,7 @@ a {
 }
 #actual_section_underline {
     width: 0;
-    height: 1.5px;
+    height: 2px;
     margin-top: 1rem;
 
     position: fixed;
@@ -169,6 +168,58 @@ a {
     font-weight: 600;
 
     padding: 1rem 2rem;
+}
+
+.logo {
+    order: 0;
+}
+#menu {
+    order: 1;
+}
+#login-div {
+    order: 2;
+}
+#header-icons-div {
+    width: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#menu .fa-bars{
+    display: none;
+
+    position: absolute;
+    top: 3rem;
+    left: 2.5rem;
+    z-index: 1001;
+
+    width: 2rem;
+
+    opacity: 1;
+    transition: opacity .4s;
+}
+#menu .fa-xmark {
+    display: none;
+
+    position: absolute;
+    top: -5rem;
+    left: 2.5rem;
+    z-index: 1001;
+
+    width: 2rem;
+
+    transition: top .4s;
+}
+#menu .fa-bars, #menu .fa-xmark {
+    font-size: 2.4rem;
+    cursor: pointer;
+    display: none;
+}
+#menu.show .fa-bars {
+    opacity: 0;
+}
+#menu.show .fa-xmark {
+    top: 3rem;
 }
 
 /* ------------- MAIN ------------- */
@@ -370,18 +421,15 @@ a {
 #articles-subtitle {
     margin: 2rem auto 5rem;
 }
-#articles .swiper-pagination {
-    margin-bottom: -40px;
+#articles .swiper-container {
+    height: 44rem;
 }
 #articles .swiper-container .swiper-pagination-bullet {
-    width: 1rem;
-    height: 1rem;
+    width: 1.1rem;
+    height: 1.1rem;
 }
 #articles .swiper-pagination-bullet-active {
     background-color: var(--primary-color) !important;
-}
-#articles .swiper {
-    height: 66.6rem;
 }
 .article-div {
     width: 36rem;

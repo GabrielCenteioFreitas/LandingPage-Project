@@ -1,0 +1,219 @@
+@media (max-width: 1200px) {
+    .achievements-rows {
+        width: 49rem;
+    }
+    .container {
+        padding: 9.6rem 8rem;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .container {
+        padding: 9.6rem 5rem;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    #header-div {
+        padding: 0 2.5rem;
+    }
+    #home-title {
+        font-size: 5.6rem;
+    }
+    #home-img {
+        width: 32rem;
+    }
+    #about-text-div {
+        max-width: 50rem;
+    }
+  }
+
+  @media (max-width: 880px) {
+    #menu #menu-list {
+        gap: 2.5rem;
+        font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .container {
+        max-width: 45rem;
+        padding: 6rem 0;
+
+        flex: initial;
+        align-items: initial;
+        justify-content: initial;
+    }
+    #home .container {
+        display: grid;
+        justify-items: center;
+        row-gap: 3rem;
+    }
+    #home-img {
+        order: 0;
+        width: 30rem;
+    }
+    #home-text {
+        order: 1;
+        text-align: center;
+
+        display: grid;
+        justify-items: center;
+    }
+    #about .container {
+        max-width: 60rem;
+        display: grid;
+        justify-items: center;
+        row-gap: 2rem;
+    }
+    #about-text-div {
+        max-width: 60rem;
+    }
+    #about-img {
+        width: 30rem;
+        margin-bottom: 1rem;
+    }
+    #achievements .container {
+        display: grid;
+        justify-items: center;
+        text-align: center;
+        row-gap: 3rem;
+    }
+    #achievements-text {
+        max-width: 40rem;
+    }
+    #achievements-numbers {
+        max-width: 45rem;
+        justify-items: center;
+    }
+    .achievements-rows {
+        width: 100%;
+
+        display: grid;
+        justify-items: center;
+        row-gap: 3rem;
+    }
+    .achievements-achievement {
+        width: 36rem;
+    }
+    .achiements-achievement-numbers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .achiements-achievement-numbers h4 {
+        display: flex;
+        align-items: center;
+    }
+    .achiements-achievement-numbers span {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--title-color);
+    }
+    #contact .container {
+        display: grid;
+        justify-items: center;
+        text-align: center;
+        row-gap: 3rem;
+    }
+    #contact-socials {
+        justify-content: center;
+    }
+    footer .container {
+        flex: initial;
+        align-items: initial;
+        justify-content: initial;
+
+        display: grid;
+        justify-items: center;
+        row-gap: 4rem;
+    }
+    #footer-main .section-text {
+        margin-top: 3rem;
+    }
+    #footer-main {
+        order: 1;
+    }
+    #footer-links {
+        order: 0;
+    }
+    #menu #menu-list {
+        display: none;
+    }
+    #menu .fa-bars, #menu .fa-xmark {
+        display: block;
+    }
+    #menu #menu-list-div {
+        top: -100rem;
+        transition: top .5s;
+    }
+    #menu.show #menu-list-div {
+        width: 100vw;
+        height: 100vh;
+
+        background-color: var(--background-color-light-grey);
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #menu.show #menu-list {
+        width: 18rem;
+        display: grid;
+        place-content: start;
+        font-size: 3.2rem;
+    }
+    #menu.show .item a {
+        position: relative;
+    }
+    #menu.show .item a:hover {
+        color: var(--second-color);
+    }
+    #menu.show .item a:hover:after {
+        background-color: var(--primary-color);
+    }
+    #menu.show .item a::after {
+        content: '';
+        width: 0%;
+        height: 0;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        background-color: var(--menu-color);
+    }
+    #menu.show .item.active a::after {
+        width: 100%;
+        height: 3px;
+
+        transition: width .3s, background-color .2s;
+    }
+    #actual_section_underline {
+        display: none;
+    }
+
+    .logo {
+        order: 1;
+    }
+    #menu {
+        order: 0;
+    }
+    #login-div {
+        order: 2;
+    }
+  }
+
+@media (max-width: 650px) {
+    #about .container {
+    max-width: 40rem;
+    }
+    #about-text-div {
+        max-width: 40rem;
+    }
+}
