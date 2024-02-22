@@ -67,6 +67,15 @@ function adjustScrollReveal() {
 }
 adjustScrollReveal();
 
+// Ajustar o menu ao mudar a resolução
+function adjustMenuWhenResize() {
+  if(window.matchMedia('(min-width: 801px)').matches) {
+    if(document.getElementById('menu').classList.contains('show')){
+      document.getElementById('menu').classList.remove('show')
+    }
+  }
+}
+
 // DETECT SCROLL
 window.addEventListener('scroll', function () {
   changeHeaderWhenScroll()
@@ -198,29 +207,14 @@ for (const item of items) {
 window.addEventListener('resize', function() {
     moveUnderline(item_atual);
     adjustSwiperSettings();
+    adjustMenuWhenResize();
     }
 )
-
-// Ajeitando responsividade para diversas telas
-// var articles_swiper = document.querySelector('#articles .swiper')
-// var articles_subtitle_height = document.querySelector('#articles-subtitle').offsetHeight
-// articles_swiper.style.height = ((articles_subtitle_height + 500)/10) + 'rem'
-// const breakpoints = [1346, 979, 940, 817];
-// let heightValue = 0
-// for (let i = 0; i < breakpoints.length; i++) {
-//   if (window.innerWidth <= breakpoints[i]) {
-//     heightValue = (articles_subtitle_height + [510, 545, 560, 550][i]) / 10;
-//     articles_swiper.style.height = heightValue + 'rem';
-//   }
-// }
-// const articles_swiper_wrapper_height = document.querySelector('#articles .swiper-wrapper').offsetTop
-// console.log(articles_swiper_wrapper_height)
-
 
 // Menu para mobile
 const menu = document.getElementById('menu')
 function showMenu() {
-  menu.classList.toggle('show')
+  menu.classList.add('show')
   if(menu.classList.contains('show')){
     window.removeEventListener('scroll', activateMenu)
   } else {
