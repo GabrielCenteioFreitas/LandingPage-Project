@@ -10,6 +10,9 @@
   <a alt="Javascript">
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" />
   </a>
+  <a alt="Figma">
+     <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white&style=flat-square" />
+  </a>
 </p>
 
 <p align="center">
@@ -34,6 +37,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - HTML
 - CSS
 - JavaScript
+- Figma
 
 
 ## 💻 Projeto
