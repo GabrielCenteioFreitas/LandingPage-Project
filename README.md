@@ -25,7 +25,7 @@
 </p>
 <h4 align="right">
   
-  [GitHub Pages](https://luisantoniofreitas.github.io/estudo_alura_oracle_one_challenge_spring01_decodificador_de_texto_javascript/)
+  [GitHub Pages](https://gabrielcenteiofreitas.github.io/Landing-Page-Project/)
 </h4>
 <br>
 
