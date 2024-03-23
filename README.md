@@ -25,7 +25,7 @@
 </p>
 <h4 align="right">
   
-  [GitHub Pages](https://gabrielcenteiofreitas.github.io/Landing-Page-Project/)
+  [GitHub Pages](https://gabrielcenteiofreitas.github.io/LandingPage-Project/)
 </h4>
 <br>
 
